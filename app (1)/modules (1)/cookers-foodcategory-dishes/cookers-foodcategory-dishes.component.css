@@ -1,0 +1,62 @@
+.cooker_details_full_menu{
+    padding: 50px 0;
+    background: #f6f6f6;
+}
+
+.left_side h2{
+    color: #df3736;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 8px 0 20px 0;
+}
+.left_side ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.left_side ul li 
+{
+    color: #36271c;
+    padding: 0 0 10px 0;
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+}
+.left_side ul li:hover{
+    cursor: pointer;
+}
+.left_side ul li:last-child{
+    border: none;
+    padding: 0 ;
+    margin: 0;
+}
+.left_side ul li span{
+    float: right;
+}   
+
+.left_side
+{
+    -webkit-box-shadow: 10px 10px 30px -17px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 30px -17px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 30px -17px rgba(0,0,0,0.75);
+    padding: 20px;
+}
+.left_side ul li a{
+    width: 100%;
+    color: #36271c;
+}
+.left_side ul li:hover a{
+    color:#df3736; 
+}
+
+.right_side h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 42px;
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #df3736;
+}

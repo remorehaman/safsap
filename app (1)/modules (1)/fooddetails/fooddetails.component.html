@@ -1,0 +1,100 @@
+<app-header 
+    [header-slider]="true" 
+    [total-product]="totalProduct"
+    [cart_product_price]="cartPrice"
+    >
+</app-header>
+
+<section class="food_category_dish_details">
+    <div class="container">    
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="left_side" >
+                    <figure >  
+                        <img src="{{siteUrl}}/uploads/dish_pictures/{{productDetailsModel.image[0]}}"/>                         
+                    </figure> 
+
+                        <div class="row">
+                            <div class="col-sm-4 gallery_image" *ngFor = "let images of productDetailsModel?.image">
+                                <figure>
+                                    <img src="{{siteUrl}}/uploads/dish_pictures/{{images}}"/>
+                                </figure>
+                            </div>
+                        </div>
+                           
+                       
+                  
+
+                    <!-- <div class="gallery_image">
+                        <owl-carousel-o [options]="galleryOptions">
+                            <ng-template  class="owl-carousel cat-slider" carouselSlide *ngFor = "let images of individualDish.imagearr" >
+                                <div class="item">
+                                    <div class="sk_box">
+                                        <figure>
+                                            <img  src="https://eclickprojects.com/safsap/uploads/dish_pictures/{{images}}"/>
+                                        </figure>                                         
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </owl-carousel-o>
+                    </div> -->
+                </div>       
+            </div>
+
+            <div class="col-sm-7">
+                <section class="dishes_details">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">   
+                                
+                                <div *ngIf ="viewSpinner" class="loader">
+                                    <mat-spinner value="100"></mat-spinner>
+                                </div>
+
+                                <div class="wrap">
+                                    <h2>{{productDetailsModel?.title | titlecase}}</h2>
+                                    <p >In stock (Only {{productDetailsModel?.quantity}} quantity available left) </p>
+                                    <h3>Category : <span>{{productDetailsModel?.category}}</span></h3>
+                                    <h4>Price : <span>{{productDetailsModel?.price | currency : productDetailsModel?.symbol}}</span></h4>
+
+                                    <!-- Add to Cart  -->
+
+                                    <!-- --------readonly="" the read only tag only able to read  -->
+                                        <button>Select Quantity<input type="number" id="" readonly="" class="input-text qty" [value]="quantity" name="quantity"  title="Qty" placeholder="" inputmode="numeric" id="quantity">
+                                           
+                                            <input type="button" value="+" class="plus" (click) ="increase()"> 
+                                            <input type="button" value= "-"  class="minus" (click) ="derease()">
+                                            <!-- <input type="text" value="1" id="quantity"> -->                                   
+                                        </button>         
+
+                                        <button class="add_to_cart">                                          
+                                            <a  (click) = "addToCart()">Add to Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                                        </button>           
+                                        {{name}} 
+
+                                    <!-- Add to cart end -->  
+                                       
+                                    <h5><span [innerHTML] = "individualDish?.dishdetails.description"></span></h5>
+                                    
+                                    <!-- <ng-container *ngIf="individualDish.dishdetails.quantity>0">
+
+                                    </ng-container> -->
+                                    <!-- <p else elseBlock>In stock (Only {{individualDish.dishdetails.quantity}} quantity available left) </p>
+                                    <ng-template #elseBlock>
+                                        <p>Out Of Stock</p>
+                                    </ng-template> -->
+                                   
+                                    
+                                    
+                                </div>  
+                            </div>                      
+                        </div>
+                    </div>
+                </section>     
+            </div>    
+       </div>      
+    </div>
+
+    
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,165 @@
+.food_category_dish_details{
+    padding: 40px 0;
+}
+.food_category_dish_details .left_side figure img
+{
+    width: 100%;
+   
+}
+.food_category_dish_details .wrap h3{
+    /* font: 400 20px/28px Roboto, "Helvetica Neue", sans-serif; */
+    letter-spacing: normal;
+    margin: 0 0 15px;
+    color: #848484;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+}
+.food_category_dish_details .wrap h3 span
+{
+    color: #6d7396;
+}
+.food_category_dish_details .wrap h2
+{
+    color:#484848;
+    margin:0 0 5px;
+}
+.food_category_dish_details .wrap h4{
+    /* font: 400 20px/28px Roboto, "Helvetica Neue", sans-serif; */
+    letter-spacing: normal;
+    margin: 0 0 15px;
+    font-size: 22px;
+    color: #848484;
+    font-weight: 500;
+}
+.food_category_dish_details .wrap p
+{
+    font: 400 17px/28px Roboto, "Helvetica Neue", sans-serif;
+    color: #0bb728;
+    padding: 0;
+    margin: 0 0 8px 0;
+}
+.food_category_dish_details .wrap h4 span
+{
+    color: #df3736;
+    font-weight: 600;
+}
+.food_category_dish_details .wrap h5{
+    font: 400 20px/28px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 15px 0 15px;
+    color: #6d7396;
+}   
+.food_category_dish_details .wrap h5 span{
+    font: 400 16px/28px Roboto, "Helvetica Neue", sans-serif;
+    
+    margin: 0 0 15px;
+    color: #6d7396;
+    display: inline;
+}
+.food_category_dish_details .wrap h5 b{
+    
+    font: 500 20px/28px Roboto, "Helvetica Neue", sans-serif;
+}
+.food_category_dish_details .gallery_image figure img{
+    /* max-width: 100%; */
+    height: 100px;
+    margin: 5px 0 3px 0px;
+    width: 200px;
+}
+.food_category_dish_details .gallery_image figure{
+    margin: 50px 0 0 0;
+}
+.dishes_details a
+{
+    background: #df3736 no-repeat;
+    border: 1px solid #df3736;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.dishes_details .wrap button.add_to_cart
+{
+    background: #df3736;
+    border: 1px solid #df3736;
+    padding: 8px 30px;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; 
+    letter-spacing: 0.6px;
+    font-size: 20px;
+    font-weight: 600;
+    height: 50px;
+}
+.dishes_details .wrap button.add_to_cart:hover{
+    background-color: #063471;
+    border-color: #063471;
+    color: #fff;
+    transition: all 300ms ease-in-out 0s;
+}
+.dishes_details .wrap button.add_to_cart{
+    margin: 0 0 0 15px;
+}
+.dishes_details .wrap button.add_to_cart i{
+    margin: 0 0 0 15px;
+}
+.wrap button input#quantity
+{   
+    width:50px;
+    vertical-align:unset;
+    margin: 0 0px 0 10px;
+    border-radius: 0px;
+    background:#fff;
+    text-align:center;
+    padding: 0;
+}
+.wrap button {
+    background: #df3736;
+    border: 1px solid #df3736;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-size: 15px;
+    height:51px;
+    border-radius: 3px;
+    padding: 0 0px 0 10px;
+    position: relative;
+}
+.wrap input.minus,.wrap input.plus
+{
+    width: 20px;
+    padding: 0 0px 0 0;
+    height: 20px;
+    line-height: 20px;
+    min-width: 0;
+    display: inline-block;
+   
+}
+.wrap input.minus
+{
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+.dishes_details button a{
+    background:none;
+    border: none;
+    padding: 0;
+}
+/* .loader{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+} */
+/* .loader .mat-progress-spinner{
+    left: 25%;
+    top: 110px;
+} */
+
+.loader .mat-progress-spinner {
+    left: 30%;
+    bottom: -190px;
+    z-index: 99;
+}

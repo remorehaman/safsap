@@ -1,0 +1,209 @@
+<app-header [header-slider]="false"></app-header>
+<main class="mainContainer">
+    
+    <section class="section log-signSec sign-bg">
+        <div class="container">
+            <h1 class="heading text-center">Registered as a {{userType | titlecase}}</h1>
+            <div class="log-signForm">
+                <form [formGroup]="Usermodel.formGroup" >
+                    <div class="form_wrap" >
+                        <h2 class="subheading">Sign Up</h2>
+                        <div class="row">
+                            <div class="col-sm-12"><a href="#"><img class="scl-icon" src="assets/images/facebook-img.png" alt="facebook-img"></a></div>
+                            <div class="col-sm-12"><a href="#"><img class="scl-icon mt20" src="assets/images/google-img.png" alt="google-img"></a></div>
+                        </div>
+                        <div class="or"><span>Or</span></div>
+                        <div class="text-left">
+                            <div class="form-head">Personal Details</div>
+                        </div>
+                        <ul class="ul row">
+                            <li class="col-sm-12">
+                                <div class="labelWrap selectbox">
+                                    <div class="form-group">
+                                        <div class="user">
+                                            <ng-select [items]="userlist" 
+                                            [searchable]="true" 
+                                            [selectOnTab]="true" 
+                                            placeholder="Select User Type" 
+                                            bindValue="value" 
+                                            labelForId="userlist"
+                                            [(ngModel)]="Usermodel.usertype" 
+                                            appendTo="body" 
+                                            formControlName="usertypeControl">
+                                            </ng-select>
+                                            <ng-container *ngIf="Usermodel.formGroup.controls['usertypeControl'].dirty">
+                                                <p class="caption status-danger" style="padding-top: 5px;" *ngIf="Usermodel.formGroup.controls['usertypeControl'].dirty && Usermodel.formGroup.controls['usertypeControl'].hasError('required')">
+                                                    User type is required!
+                                                </p>
+                                            </ng-container>
+                                            <!--<select formControlName="userType" placeholder="Select User Type" style="height: 58px">
+                                                <option [ngValue]="null" disabled>Select User Type</option>
+                                                <option *ngFor="let user of userlist" value="{{user}}" >{{user}}</option>
+                                            </select>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-12">
+                                <div class="labelWrap" >
+                                    <div class="form-group">
+                                        <input type="text" formControlName="nameControl" [(ngModel)]="Usermodel.name" name="flname" placeholder="First Name & Last Name" 
+                                        [required]="true"
+                                        [attr.aria-invalid]="Usermodel.formGroup.controls['nameControl'].invalid && Usermodel.formGroup.controls['nameControl'].touched ? true : null" >
+                                        <ng-container *ngIf="Usermodel.formGroup.controls['nameControl'].dirty">
+                                            <p class="caption status-danger" style="padding-top: 5px;" *ngIf="Usermodel.formGroup.controls['nameControl'].dirty && Usermodel.formGroup.controls['nameControl'].hasError('required')">
+                                              Name is required!
+                                            </p>
+                                            <p class="caption status-danger" style="padding-top: 5px;" *ngIf="Usermodel.formGroup.controls['nameControl'].dirty && Usermodel.formGroup.controls['nameControl'].hasError('pattern')">
+                                              Only alphanumeric characters are permitted!
+                                            </p>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-12">
+                                <div class="labelWrap">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Email Address" [(ngModel)]="Usermodel.email" formControlName="emailControl" 
+                                        [required]="true"
+                                        [attr.aria-invalid]="Usermodel.formGroup.controls['emailControl'].invalid && Usermodel.formGroup.controls['emailControl'].touched ? true : null" >
+                                        <ng-container *ngIf="Usermodel.formGroup.controls['emailControl'].dirty">
+                                            <p class="caption status-danger" style="padding-top: 5px;" *ngIf="Usermodel.formGroup.controls['emailControl'].dirty && Usermodel.formGroup.controls['emailControl'].hasError('required')">
+                                              Email is required!
+                                            </p>
+                                            <p class="caption status-danger" style="padding-top: 5px;" *ngIf="Usermodel.formGroup.controls['emailControl'].dirty && Usermodel.formGroup.controls['emailControl'].hasError('email')">
+                                              Please enter a valid email address.
+                                            </p>
+                                  
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="labelWrap">
+                                        <input type="password" placeholder="Password" [(ngModel)]="Usermodel.password" formControlName="passwordControl" 
+                                        [required]="true"
+                                        [attr.aria-invalid]="Usermodel.formGroup.controls['passwordControl'].invalid && Usermodel.formGroup.controls['passwordControl'].touched ? true : null">
+                                        <ng-container *ngIf="Usermodel.formGroup.controls['passwordControl'].dirty">
+                                            <p class="caption status-danger" style="padding-top: 5px;" *ngIf="Usermodel.formGroup.controls['passwordControl'].dirty && Usermodel.formGroup.controls['passwordControl'].hasError('required')">
+                                              Password is required!
+                                            </p>
+                                            <p class="caption status-danger" style="padding-top: 5px;" *ngIf="Usermodel.formGroup.controls['passwordControl'].dirty && Usermodel.formGroup.controls['passwordControl'].hasError('pattern')">
+                                              Password must be minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character.
+                                            </p>
+                                          </ng-container>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="labelWrap">
+                                        <input type="password" placeholder="Confirm Password" [(ngModel)]="Usermodel.confirmpassword" formControlName="confirmpasswordControl" 
+                                        [required]="true"
+                                        [attr.aria-invalid]="Usermodel.formGroup.controls['confirmpasswordControl'].invalid && Usermodel.formGroup.controls['confirmpasswordControl'].touched ? true : null">
+                                        <ng-container *ngIf="Usermodel.formGroup.controls['confirmpasswordControl'].dirty">
+                                            <p class="caption status-danger" style="padding-top: 5px;" *ngIf="Usermodel.formGroup.controls['confirmpasswordControl'].dirty && Usermodel.formGroup.controls['confirmpasswordControl'].hasError('required')">
+                                              Confirm Password is required!
+                                            </p>
+                                            <p class="caption status-danger" style="padding-top: 5px;" *ngIf="Usermodel.formGroup.controls['confirmpasswordControl'].dirty && Usermodel.formGroup.controls['confirmpasswordControl'].hasError('pattern')">
+                                              Only alphanumeric characters are permitted!
+                                            </p>
+                                            <p class="caption status-danger" style="padding-top: 5px;" *ngIf="Usermodel.formGroup.controls['confirmpasswordControl'].dirty && Usermodel.formGroup.controls['confirmpasswordControl'].hasError('mustMatch')">
+                                              Password and confirm password are not same.
+                                            </p>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-12">
+                                <div class="term-cond text-left">
+                                    <div class="term-cond-text mCustomScrollbar _mCS_2">
+                                        <div id="mCSB_2" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_outside">
+                                            <div id="mCSB_2_container" class="mCSB_container">
+                                                <div class="subheading">Terms for chef</div>
+                                                <div class="editor_text termTXT">
+                                                    <ul>
+                                                        <li>Accept the terms and conditions</li>
+                                                        <li>Have an active and functional account</li>
+                                                        <li>Your account information must be reliable, verifiable and up to date</li>
+                                                        <li>Have self-employment status</li>
+                                                        <li>Be of legal age to provide Safsap food services</li>
+                                                        <li>Respect hygienic conditions, ensure the quality and freshness of the food provided</li>
+                                                        <li>Ensure the actual availability of the food before posting it on the Safsap food website</li>
+                                                        <li>Make a detailed and complete list of the different ingredients contained in the dish</li>
+                                                        <li>Ensure the conformity of the list thus provided with the ingredients actually contained in the dishes.</li>
+                                                        <li>Safsap food declines all responsibility in the event of a discrepancy between this list of ingredients and the reality of the ingredients of the dishes</li>
+                                                        <li>Accept the collection of personal data in connection with the services provided by Safsapfood</li>
+                                                        <li>Recognize that any image presented on the Safsapfood site becomes the exclusive property of Safsapfood</li>
+                                                        <li>It is strictly forbidden to download and distribute on the Safsapfood website any obscene, outrageous or discriminatory content</li>
+                                                        <li>It is forbidden to post on the site any image, video or words likely to damage the image of Safsapfood and to infringe its credibility</li>
+                                                        <li>Recognize that Safsapdood reserves the right, at any time, to review the conditions and terms and that any subsequent use of such modifications is equivalent to acceptance of the new terms and conditions</li>
+                                                        <li>Safsapfood reserves the right to withdraw from its services in the event of customer complaints or non-compliance with its terms and conditions</li>
+                                                        <li>Mediation is considered the first step to resolve any potential conflict</li>
+                                                        <li>The appeal to the courts must be made in Gatineau, Quebec and in French.</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="subheading term-head mt30">Conditions for delivery person</div>
+                                                <div class="editor_text termTXT">
+                                                    <ul>
+                                                        <li>Accept the terms and conditions</li>
+                                                        <li>Have an active and functional account </li>
+                                                        <li>Your account information must be reliable, verifiable and up to date </li>
+                                                        <li>Accept the collection of personal data in connection with the services provided by Safsapfood</li>
+                                                        <li>Have a valid driver's license in the state or province where services are offered </li>
+                                                        <li>Recognize that the races that are priced constitute a pay in exchange for the services provided. </li>
+                                                        <li>Assume the cost of wear or repair of the car that allows you to use the services of Safsapfood. </li>
+                                                        <li>Safsapfood does not provide any repairs in the event of a breakdown or total loss of your work tool</li>
+                                                        <li>Do not carry dangerous or prohibited items while you are delivering food </li>
+                                                        <li>Safsapfood reserves the right to withdraw from its services in the event of customer complaints </li>
+                                                        <li>Mediation is considered the first step to resolve any potential conflict </li>
+                                                        <li>Appeal to the courts must be in Gatineau, Quebec and in French</li>
+                                                        <li>Recognize that any image presented on the Safsapfood site becomes its exclusive property</li>
+                                                        <li>It is strictly prohibited to put on the Safsapfood website any obscene, outrageous or discriminatory content</li>
+                                                        <li>Recognize that Safsapdood reserves the right, at any time, to review the conditions and terms and that any subsequent use is equivalent to acceptance of said modifications.</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="subheading term-head mt30">Conditions for clients </div>
+                                                <div class="editor_text termTXT">
+                                                    <ul>
+                                                        <li>Accept the terms and conditions</li>
+                                                        <li>Have an active and functional account</li>
+                                                        <li>Your account information must be reliable, verifiable and up to date</li>
+                                                        <li>In the absence of the address indicated for delivery, you will not be reimbursed for the costs relating to the order placed on the Safsapfood site.</li>
+                                                        <li>Recognize that any image presented on the Safsapfood site becomes its exclusive property</li>
+                                                        <li>It is strictly forbidden to put on the Safsapfood website any obscene, outrageous or discriminatory content</li>
+                                                        <li>It’s up to you whether or not to tip the delivery man </li>
+                                                        <li>Recognize that Safsapdood reserves the right, at any time, to review the conditions and terms and that any subsequent use of such modifications is equivalent to acceptance of the new terms and conditions</li>
+                                                        <li>Mediation is considered the first step to resolve any potential conflict</li>
+                                                        <li>Appeal to the courts must be in Gatineau, Quebec and in French</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center mt10">
+                                                <input type="checkbox"  class="term-check" id="tc" name="tc">
+                                                <span>I have read and agree to the <a href="https://eclickprojects.com/safsap/links/terms-conditions-1">terms &amp; conditions</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-12">
+                                <div class="btn_center log-sign-btn">
+                                    <button type="submit" 
+                                    class="btn" 
+                                    (click)="createuser()"
+                                    status="success"
+                                    [disabled]="!Usermodel.formGroup.valid">
+                                    Sign Up Now </button>
+                                </div>
+                            </li>
+                        </ul> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>   
+</main>
+
+<app-footer></app-footer>

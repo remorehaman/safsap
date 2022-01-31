@@ -1,0 +1,39 @@
+<app-header [header-slider] = false></app-header>
+
+<section class="booking">
+    <div class="container">
+       <h2>Booking Lists</h2>
+
+       <table class="table table-bordered" id="dataTable" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Booking Id</th>
+                    <th>From</th>
+                    <th>Cooker</th>
+                    <th>Delivery Man</th>
+                    <th>Booking Date/Time</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor = "let booking of getBookingList; let i = index" >
+                    <td>{{i + 1}}</td>
+                    <td>{{booking.booking_code}}</td>
+                    <td>{{booking.name}}</td>
+                    <td>{{booking.hotel_title}}</td>
+                    <td>{{booking.DeliverymanName}}</td>
+                    <td> {{booking.added_on | date }} @ {{booking.added_on | date:'h:mm:ss a'}}</td>
+                    <td>{{booking.booking_status | titlecase}}</td>
+                    <td><a [routerLink] = "['/booking-list',booking.booking_id]">View</a></td>
+                    
+                </tr>
+            </tbody>
+            
+       </table>
+    </div>
+</section>
+
+<app-footer></app-footer>

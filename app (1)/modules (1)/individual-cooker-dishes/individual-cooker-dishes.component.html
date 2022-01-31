@@ -1,0 +1,71 @@
+
+<!-- <div class="wrap_text">
+    <h4><span>{{showCookersThumb.name}}</span></h4> 
+    <h4><span>{{showCookersThumb.hotel_timing_start}}-{{showCookersThumb.hotel_timing_end}}</span></h4> 
+    <h4><span>{{showCookersThumb.hotelClosedDay}}</span></h4>
+</div> -->
+
+
+
+<div class="right_side" >
+    <section class="dishes">
+       
+        <div class="food_wrap">
+            
+            <a [routerLink] = "['/cookerdish',showCookersThumb?.hotel_slug,showCookersThumb?.dish_slug]">
+                <figure>  
+                    <img src="{{siteUrl}}/uploads/dish_pictures/{{showCookersThumb?.firstImage}}" />                                  
+                </figure>
+            
+                <div class="wrap">
+                    <h3>{{showCookersThumb?.title | titlecase}}</h3> 
+                    <p>{{showCookersThumb?.descriptionFormated}}</p>
+                    <h4>{{showCookersThumb?.hotel_title}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>{{showCookersThumb?.avgrating.avgrating}}
+                    </div>
+                    <span>{{showCookersThumb?.price | currency : 'CAD'}}</span>
+                </div>  
+            </a>
+            
+        </div>
+
+
+                
+     
+    </section>
+</div>
+
+ 
+<!--   -->
+
+<!-- <div class="right_side" >
+        
+    <section class="dishes">
+        <div class="container">
+            <div class="row" >
+                <div class="col-sm-4" *ngFor = "let food_dish of dishList">  
+                   
+                    <div class="food_wrap">
+                        <a [routerLink] = "['/foodcategory',cat_slug,food_dish.dish_slug]"> 
+                            <figure>  
+                                <img src="{{siteUrl}}/uploads/dish_pictures/{{food_dish.firstImage}}" />                                  
+                            </figure>
+                            
+                            <div class="wrap">
+                                <h3>{{food_dish.title | titlecase}}</h3> 
+                                <p>{{food_dish.descriptionFormated}}</p>
+                                <h4>{{food_dish.hotel_title}}</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>{{food_dish.avgrating.avgrating}}
+                                </div>
+                                <span>{{food_dish.price | currency : 'CAD'}}</span>
+                            </div>  
+                        </a> 
+                    </div>              
+                      
+                </div>
+            </div>
+        </div>
+    </section>  
+</div>           -->

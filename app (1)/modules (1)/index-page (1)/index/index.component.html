@@ -1,0 +1,20 @@
+<app-header [header-slider]="true"
+[total-product]="totalProduct"
+[cart_product_price]="cartPrice"></app-header>
+<main class="mainContainer">
+    <app-cooker-nearby></app-cooker-nearby>
+    
+    <section class="section home-register">
+        <div class="container">
+            <h2 class="heading text-center">Cookers to Register</h2>
+            <div class="short-desc">Donec sit amet venenatis lacus, eget accumsan diam</div>
+            <div class="btn_center">
+                <a [routerLink]="'/signup'" class = "btn btn-lg">Signup</a>
+            </div>
+        </div>
+    </section>
+    <app-popular-categories></app-popular-categories>
+     
+</main> 
+
+<app-footer></app-footer>

@@ -1,0 +1,65 @@
+<app-header [header-slider]="false"
+    [total-product]="totalProduct"
+    [cart_product_price]="cartPrice">
+</app-header>
+
+<section class="food_category">
+    <div class="container">    
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left_side">
+                    <h2>FOOD CATEGORY</h2>
+                    <ul>                  
+                        <li *ngFor = "let food_category of foodleftsideList" (click) = "getPost()" >
+                            <a [routerLink] = "['/foodcategory',food_category.cat_slug]">
+                                {{food_category.cat_name}} <span>{{food_category.totalproduct}}</span>     
+                            </a>
+                           
+                        </li>
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="col-sm-9">
+                <div class="right_side" >
+                    <!-- <div *ngIf= "loaderServices.isLoading | async" class="loader">   -->
+                    <div *ngIf= "showSpinner" class="loader"> 
+                        <mat-spinner value="100"></mat-spinner>
+                    </div>         
+                    <h2>Food List : {{cat_slug | titlecase}}</h2>
+                    <section class="dishes">
+                        <div class="container">
+                            <div class="row" >
+                                <div class="col-sm-4" *ngFor = "let food_dish of dishList">  
+                                   
+                                    <div class="food_wrap">
+                                        <a [routerLink] = "['/foodcategory',cat_slug,food_dish.dish_slug]"> 
+                                            <figure>  
+                                                <img src="https://eclickprojects.com/safsap/uploads/dish_pictures/{{food_dish.firstImage}}" />                                  
+                                            </figure>
+                                       
+                                            <div class="wrap">
+                                                <h3>{{food_dish.title | titlecase}}</h3> 
+                                                <p>{{food_dish.descriptionFormated}}</p>
+                                                <h4>{{food_dish.hotel_title}}</h4>
+                                                <div class="rating">
+                                                    <i class="fa fa-star"></i>{{food_dish.avgrating.avgrating}}
+                                                </div>
+                                                <span>{{food_dish.price | currency : 'CAD'}}</span>
+                                            </div>  
+                                        </a> 
+                                    </div>              
+                                      
+                                </div>
+                            </div>
+                        </div>
+                    </section>  
+                </div>          
+            </div>
+        </div>       
+    </div>
+</section>
+
+
+
+<app-footer></app-footer>

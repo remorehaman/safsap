@@ -1,0 +1,22 @@
+.dtls-review-left .heading, .dtls-review-right .heading {
+    font-weight: 500;
+}
+/* section.cooker_details{
+    background: #f6f6f6;
+    padding: 50px 0;
+} */
+
+#availabledishesbycooker{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 34px;
+    margin-bottom: 30px;
+}
+.dtls-review-left p{ 
+    font-size: 15px;
+}
+.cooker_individual_dish figure img{
+    height: 200px !important;
+    border-radius: 5px;
+}
+

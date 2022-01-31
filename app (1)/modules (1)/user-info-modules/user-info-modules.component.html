@@ -1,0 +1,53 @@
+<app-header [header-slider]= "false"
+    [total-product]="totalProduct"
+    [cart_product_price]="cartPrice"
+></app-header>
+<div class="user_section">
+    
+    <div class="container">
+
+       
+        <form class="user">
+            <div class="form-group">
+              <label for="page">Page</label>
+              <input type="page" class="form-control" id="page" placeholder="Enter page no" name="page">
+            </div>
+            <div class="form-group">
+              <label for="limit">Limit</label>
+              <input type="limit" class="form-control" id="limit" placeholder="Enter limit" name="limit">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+          
+
+        <section class="users-section-info">
+            <h2>List Of Users</h2>
+            <ul>
+                <li *ngFor = "let user of user_information?.users">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <figure>
+                                <img src="https://eclickprojects.com/safsap/uploads/profile_pictures/{{user.user_profile_pic}}" /> 
+                            </figure>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="wrap_text">
+                                <h4>Role: <span> {{user.role}}</span></h4>
+                                <h4>Name : <span> {{user.userName}} </span></h4>
+                                <h4>Email: <span> {{user.username}}</span></h4>
+                                <a [routerLink] = "['/user-info-modules',user.username,user.userId]">View Details</a>
+                               
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                </li>            
+            </ul> 
+              
+            
+        </section>
+    </div> 
+</div>
+<app-footer></app-footer>
+

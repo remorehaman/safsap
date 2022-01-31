@@ -1,0 +1,72 @@
+.user .form-group {
+   display: inline-block;
+   margin: 0 0 0 15px;
+}
+.user .btn-primary{
+    height: 40px;
+    line-height: 40px;
+    margin: 27px 0 30px 16px;
+    height: 40px;
+    line-height: 40px;
+}
+form.user{
+    margin: 0 auto;
+    width: 500px;
+}
+
+.user_section h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 42px;
+    margin: 30px 0 30px 60px;
+    color: #df3736;
+    letter-spacing: 1.2px;
+}
+.wrap_text h4
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #36271c;
+}
+.wrap_text h4 span
+{
+    font-weight: 500;
+}
+.users-section-info
+{
+    box-shadow: 10px 10px 30px -17px rgb(0 0 0 / 75%);
+    padding: 20px 20px 50px 20px;
+    margin: 0 0 45px 0;
+}
+.users-section-info ul {
+    list-style: none;
+}
+.wrap_text{
+    margin: 40px 0 0 0;
+}
+.wrap_text h4{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: #36271c;
+}
+.users-section-info figure{
+    text-align: center;
+}
+.users-section-info ul li{
+    margin: 0 0 35px 0;
+}
+.users-section-info figure img{
+    width: 300px;
+    height: 230px;
+}
+.users-section-info .wrap_text a
+{
+    border-bottom: 1px solid #df3736;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: uppercase;
+}

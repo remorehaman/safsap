@@ -1,0 +1,6 @@
+.booker_details span, .deilver_information span{
+    display: block;
+}
+.deilver_information h3{
+    margin: 15px 0 10px 0px;
+}

@@ -1,0 +1,68 @@
+
+<app-header 
+    [header-slider]="false"
+    [total-product]="totalProduct"
+    [cart_product_price]="cartPrice">
+   
+</app-header>
+<!--  [header-img]="true" [header-img-data]="foodleftsideList"> -->
+<!-- <img src="https://eclickprojects.com/safsap/uploads/cooker_banners/2ivVAabmRz1590751303.jpg"> -->
+<section class="food_category">
+    <div class="container">    
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left_side">
+                    <h2>FOOD CATEGORY</h2>
+                    
+                    <ul>                  
+                        <li *ngFor = "let food_category of foodleftsideList">
+                            <a [routerLink] = "['/foodcategory',food_category.cat_slug]">
+                                {{food_category.cat_name}} <span>{{food_category.totalproduct}}</span>     
+                            </a>
+                           
+                        </li>
+
+                      
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="col-sm-9">
+                <div class="right_side">
+                    <h2>Cookers Near You</h2>
+                    <ul>                  
+                        <li *ngFor = "let cookers_list of cookersList">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <figure>
+                                        <img src="https://eclickprojects.com/safsap/uploads/profile_pictures/{{cookers_list.user_profile_pic_resized}}" /> 
+                                    </figure>
+                                   
+                                </div>  
+                                <div class="col-sm-8">
+                                    <div class="wrap_text">
+                                        <h4>Name : <span>{{cookers_list.name}}</span></h4> 
+                                        <h4>Address : <span>{{cookers_list.hotel_address}}</span></h4>
+                                        <h4>TotalKM : <span>{{cookers_list.TotalKM}}</span></h4>
+                                        <h4>Timing : <span>{{cookers_list.hotel_timing_start}}-{{cookers_list.hotel_timing_end}}</span></h4> 
+                                        <h4>Closed : <span>{{cookers_list.hotelClosedDay}}</span></h4>
+                                        <a [routerLink] = "['/cookers-details',cookers_list.hotel_slug]">View Details</a>
+                                        <a [routerLink] = "['/cookers-full-menu',cookers_list.hotel_slug]" class="menu">View Full Menu</a>
+                                    </div>
+                                </div>
+                            </div>
+                                 
+                          
+                            
+                        </li>
+                    </ul>
+                </div>          
+            </div>
+        </div>  
+         
+    </div>
+</section>
+
+
+
+<app-footer></app-footer>

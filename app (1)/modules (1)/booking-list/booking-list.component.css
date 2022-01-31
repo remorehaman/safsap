@@ -1,0 +1,17 @@
+.booking .table-bordered td,  .booking .table-bordered thead th{
+    text-align: center;
+    color: #777 !important;
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-size: 14px;
+}
+.booking h2
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #df3736;
+    font-size: 30px;
+    margin: 0px 0 30px 12px;
+}
+.booking{
+    margin: 50px 0 70px 0;
+}

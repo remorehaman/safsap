@@ -1,0 +1,46 @@
+<app-header
+[header-slider]="false" 
+[header-img]="true"
+[header-img-data]="headerImage"
+[header-cookers-info]="userInfo">
+</app-header>
+
+
+<div class="cooker_details_full_menu">
+    <div class="container">
+   
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left_side">
+                    <h2>FOOD CATEGORY</h2>
+                    <ul>                  
+                        <li *ngFor = "let cookers_full_menu of foodleftsideList" >
+                            <a [routerLink] = "['/cookers-full-menu',cookers_full_menu.hotel_slug,cookers_full_menu.cat_slug]">
+                                {{cookers_full_menu.cat_name}} <span>{{cookers_full_menu.totalproduct}}</span>     
+                            </a>
+                           
+                        </li>   
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="right_side">
+                    <h2 class="text-left heading red" id="availabledishesbycooker">{{cookersDetails?.name}} : {{cat_slug | titlecase}}</h2>
+               
+                    <div class="row">
+                        <div class="col-sm-4"  *ngFor = "let sinle_cooker_dishes of cookerDishList">
+                            <app-individual-cooker-dishes [cookers-thumbnailInfo]="sinle_cooker_dishes"></app-individual-cooker-dishes>   
+                        </div>
+                    </div>
+                       
+                </div>      
+            </div>   
+        </div>
+    </div>
+    
+</div>
+            
+
+
+
+<app-footer></app-footer>

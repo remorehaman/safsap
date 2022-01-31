@@ -1,0 +1,34 @@
+<app-header [header-slider] = "true"
+[total-product]="totalProduct"
+[cart_product_price]="cartPrice"
+></app-header>
+<div class="container">
+    <div class="section_user_details">
+
+        <h2>About : {{getUserDetails?.user_firstname | titlecase}} {{getUserDetails?.user_middlename | titlecase}}
+            {{getUserDetails?.user_lastname | titlecase}}
+        </h2>
+        <div class="row">
+            <div class="col-sm-5">
+                <figure>
+                    <img src="https://eclickprojects.com/safsap/uploads/profile_pictures/{{getUserDetails?.user_profile_pic}}" /> 
+                </figure>
+            </div>
+            <div class="col-sm-7">
+                <div class="wrap_text">
+                    <h4> First Name :  <span> {{getUserDetails?.user_firstname}}</span></h4>                
+                    <h4> Middle Name : <span> {{getUserDetails?.user_middlename}}</span></h4>
+                    <h4> Last Name :  <span> {{getUserDetails?.user_lastname}} </span></h4>
+                    <h4> Email : <span>{{getUserDetails?.user_email_id}}</span></h4>
+                    <h4> Phone No : <span> {{getUserDetails?.user_phno}}</span></h4>
+                    <h4> Address : <span> {{getUserDetails?.user_address}}</span></h4>   
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+   
+
+
+<app-footer></app-footer>

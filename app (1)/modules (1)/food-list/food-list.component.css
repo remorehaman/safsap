@@ -1,0 +1,131 @@
+.left_side h2{
+    color: #df3736;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 8px 0 20px 0;
+}
+.left_side ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.left_side ul li 
+{
+    color: #36271c;
+    padding: 0 0 10px 0;
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+}
+.left_side ul li:hover{
+    cursor: pointer;
+}
+.left_side ul li:last-child{
+    border: none;
+    padding: 0 ;
+    margin: 0;
+}
+.left_side ul li span{
+    float: right;
+}   
+
+.food_category{
+    padding: 50px 0;
+    background: #f6f6f6;
+}
+.left_side
+{
+    -webkit-box-shadow: 10px 10px 30px -17px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 30px -17px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 30px -17px rgba(0,0,0,0.75);
+    padding: 20px;
+}
+.left_side ul li a{
+    width: 100%;
+    color: #36271c;
+}
+.left_side ul li:hover a{
+    color:#df3736; 
+}
+.right_side h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 42px;
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #df3736;
+}
+.right_side .dishes figure img{
+    height: 200px !important;
+    width: 100%;
+    border-radius: 5px;
+}
+.right_side .dishes h3
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #484848;
+}
+.right_side .dishes p
+{
+    color: #686868;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 0 0 5px 0;
+    height: 28px;
+    overflow: hidden;
+}
+.right_side .dishes .food_wrap:hover .wrap h3{
+    color: #df3736;
+}   
+.dishes .food_wrap{
+    
+    margin: 0 0 30px 0;
+}
+.dishes .food_wrap a
+{
+    border: 1px solid #f9dada;
+    border-radius: 5px;
+}
+
+.dishes .wrap{
+    padding: 24px 15px;
+}
+.dishes .wrap span{
+    color: #df3736;
+    font-weight: 500;
+    float: right;
+    line-height: 28px;
+    font-size: 14px;
+}
+.loader{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+}
+.loader .mat-progress-spinner{
+    left: 25%;
+    top: 110px;
+}
+.food_wrap .wrap h4{
+    display: inline-block;
+    margin: 0;
+    color: #df3736;
+    font-size: 15px;
+    font-weight: 500;
+   
+}
+.rating{
+    margin: 0 0 0 7px;
+    min-width:55px;
+    padding: 3px;
+}
+.rating i.fa{
+    padding: 0 5px 0 0px;
+}

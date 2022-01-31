@@ -1,0 +1,106 @@
+<section class="section home-categories">
+        <div class="container">
+            <h2 class="heading text-center">Most Popular Categories</h2>
+            <div class="short-desc">Donec sit amet venenatis lacus, eget accumsan diam</div>
+            <div class="cat_list">
+                <!-- <owl-carousel-o class="owl-carousel cat-slider" [options]="popularcatOptions">
+                    <ng-template carouselSlide>
+                        <div class="item">
+                        <div class="sk_box">
+                            <a href="#">
+                                <figure>
+                                    <img src="assets/images/sample/c1.jpg" alt="">
+                                </figure>
+                                <div class="sk_text">
+                                    <h2 class="subheading">Vegeterian Items</h2>
+                                    <span class="btn"><i class="fa fa-long-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="item">
+                            <div class="sk_box">
+                                <a href="#">
+                                    <figure>
+                                        <img src="assets/images/sample/c3.jpg" alt="">
+                                    </figure>
+                                    <div class="sk_text">
+                                        <h2 class="subheading">Vegeterian Items</h2>
+                                        <span class="btn"><i class="fa fa-long-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o> -->
+                 <owl-carousel-o [options]="popularcatOptions">
+                    <ng-template  class="owl-carousel cat-slider" carouselSlide *ngFor = "let popcat of allpopularCategories" >
+                        <div class="item">
+                            <div class="sk_box">
+                                <a [routerLink] = "['/foodcategory',popcat.cat_slug]">
+                                    <figure>
+                                        
+                                        <img src="https://eclickprojects.com/safsap/uploads/category_pictures/{{popcat.cat_image}}" /> 
+                                       
+                                    </figure>
+                                    <div class="sk_text">
+                                        <h2 class="subheading">{{popcat.cat_name}}</h2>
+                                        <span class="btn"><i class="fa fa-long-arrow-right"></i></span>
+                                    </div>
+                                </a> 
+                            </div>
+                        </div>
+                    </ng-template>
+                    <!-- <ng-template  class="owl-carousel cat-slider" carouselSlide>
+                        <div class="item">
+                            <div class="sk_box">
+                                <a href="#">
+                                    <figure>
+                                        <img src="assets/images/sample/c1.jpg" alt="">
+                                    </figure>
+                                    <div class="sk_text">
+                                        <h2 class="subheading">Vegeterian Items</h2>
+                                        <span class="btn"><i class="fa fa-long-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template  class="owl-carousel cat-slider" carouselSlide>
+                        <div class="item">
+                            <div class="sk_box">
+                                <a href="#">
+                                    <figure>
+                                        <img src="assets/images/sample/c1.jpg" alt="">
+                                    </figure>
+                                    <div class="sk_text">
+                                        <h2 class="subheading">Vegeterian Items</h2>
+                                        <span class="btn"><i class="fa fa-long-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template  class="owl-carousel cat-slider" carouselSlide>
+                        <div class="item">
+                            <div class="sk_box">
+                                <a href="#">
+                                    <figure>
+                                        <img src="assets/images/sample/c1.jpg" alt="">
+                                    </figure>
+                                    <div class="sk_text">
+                                        <h2 class="subheading">Vegeterian Items</h2>
+                                        <span class="btn"><i class="fa fa-long-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </ng-template> -->
+                </owl-carousel-o>
+                
+                
+            </div>
+        </div>
+    </section> 

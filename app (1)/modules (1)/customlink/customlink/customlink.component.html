@@ -1,0 +1,12 @@
+<app-header [header-slider]="false"></app-header>
+<main class="mainContainer">  
+		
+    <section class="section">
+        <div class="container">
+            <h2 class="heading red">{{pageTitle}}</h2> 
+            
+            <div [innerHtml]="pageContent"></div>
+        </div>
+    </section>
+</main> 
+<app-footer></app-footer>

@@ -1,0 +1,70 @@
+.right_side .dishes figure img{
+    height: 200px !important;
+    width: 100%;
+    border-radius: 5px;
+}
+.right_side .dishes h3
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #484848;
+}
+.right_side .dishes p
+{
+    color: #686868;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 0 0 5px 0;
+    height: 28px;
+    overflow: hidden;
+}
+.right_side .dishes .food_wrap:hover .wrap h3{
+    color: #df3736;
+}   
+.dishes .food_wrap{
+
+    margin: 0 0 30px 0;
+}
+.dishes .food_wrap a
+{
+    border: 1px solid #f9dada;
+    border-radius: 5px;
+}
+.dishes .wrap{
+    padding: 24px 15px;
+}
+.dishes .wrap span{
+    color: #df3736;
+    font-weight: 500;
+    float: right;
+    line-height: 28px;
+    font-size: 14px;
+}
+.loader{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+}
+.loader .mat-progress-spinner{
+    left: 25%;
+    top: 110px;
+}
+.food_wrap .wrap h4{
+    display: inline-block;
+    margin: 0;
+    color: #df3736;
+    font-size: 15px;
+    font-weight: 500;
+   
+}
+.rating{
+    margin: 0 0 0 7px;
+    min-width:55px;
+    padding: 3px;
+}
+.rating i.fa{
+    padding: 0 5px 0 0px;
+}

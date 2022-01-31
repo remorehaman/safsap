@@ -1,0 +1,42 @@
+<app-header [header-slider]=false></app-header>
+
+<section class="booking_details">
+    <div class="container">
+       <h2>View</h2>
+
+       <div class="booker_details">
+           <div class="row">
+                <div class="col-lg-3">
+                        <h4>Booking Id: <span>{{bookingDetailsData?.booking_code}}</span></h4>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Order Status: <span>{{bookingDetailsData?.booking_status | titlecase }}</span></h4>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Mode of Payment:<span>{{bookingDetailsData?.mode_of_payment}}</span></h4>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Order Date:<span>{{bookingDetailsData?.added_on | date }},{{bookingDetailsData?.added_on | date:'h:mm:ss a' }}</span></h4>
+                </div>
+           </div>
+            
+       </div>
+       <div class="deilver_information">
+           <h3>Delivery Information</h3>
+        <div class="row">
+            <div class="col-lg-3">
+                    <h4>Delivery Type <span>{{bookingDetailsData?.deliveryoption}}</span></h4>
+            </div>
+            <div class="col-lg-3">
+                <h4>Delivery Man Name<span>{{bookingDetailsData?.DeliverymanName }}</span></h4>
+            </div>
+            <div class="col-lg-3">
+                <h4>Delivery Man Phone<span>{{bookingDetailsData?.DeliverymanPhone}}</span></h4>
+            </div>
+            
+       </div>
+        
+       </div>
+    </div>
+</section>
+<app-footer></app-footer>

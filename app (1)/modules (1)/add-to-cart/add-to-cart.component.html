@@ -1,0 +1,78 @@
+<app-header [header-slider]="false"
+    [total-product]="totalProduct"
+    [cart_product_price]="cartPrice"></app-header>
+
+<section class="add_to_cart">
+    <div class="container">
+        <table class="table table-bordered" id="dataTable" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Item Image</th>
+                    <th>Item Title</th>
+                    <th>Cooker</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Sub Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            
+
+            <tbody>
+              
+                <ng-container *ngIf="cartFoods else cartEmpty">
+                    <tr *ngFor ="let addToCart of cartFoods; let myIndex=index;">
+                        <td>
+                            <figure>
+                                <img src="{{siteUrl}}/uploads/dish_pictures/{{addToCart?.image[0]}}">
+                            </figure>
+                        </td>
+                        <td>
+                            <h2 class="cart-subhead subheading">{{addToCart?.title}}</h2>
+                        </td>
+                        <td></td>   
+                        <td>
+                            <h4><input type="number" readonly="" class="input-text qty" [value]="addToCart.addedqty" name="quantity" title="Qty" placeholder="" inputmode="numeric" id="quantity"></h4>
+                            <input type="button" value="+" class="plus" (click) ="increase()"> 
+                            <input type="button" value= "-"  class="minus" >
+                            <p>min qty: 1 max qty:{{addToCart?.totalQuantity}}</p>
+                        </td>
+                        <td>
+                            <h3>{{addToCart?.price | currency : 'CAD'}}</h3>
+                        </td>
+                        <td>
+                            <h3>{{addToCart?.price * addToCart.addedqty | currency : 'CAD'}}</h3>
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-danger deleteRow" title="Delete" (click) ="removeItem(myIndex)"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </ng-container>
+
+                
+                <ng-template #cartEmpty>  
+
+                    <tr>
+                        <td colspan="12"> <h2>Your Cart is empty !</h2>  </td>
+                    </tr>
+                                                        
+                </ng-template>
+              
+                
+                    
+                <tr>
+                    <td  colspan="12">
+                        <button type="button" id="proceedtocheckout" class="btn_1 medium" style="float: right;">Proceed to checkout</button>
+                        <button type="submit" class="btn_1 medium" style="float: right; margin-right:10px;">Update</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+       
+    </div>
+</section>
+
+
+<app-footer></app-footer>
+

@@ -1,0 +1,59 @@
+<app-header [header-slider]="false"></app-header>
+<div class="mainContainer">
+    <section class="contact_form">
+        <div class="container"> 
+            <div class="form_wrap contact-form">
+                <h3 class="heading">Feel free to contact us</h3>
+                <div class="alert alert-danger alert-dismissable" id="errorgen" style="display:none"></div>
+                <div class="alert alert-success alert-dismissable" id="successgen" style="display:none"></div>
+                <form name="contact" id="contact" method="POST">
+                <input type="hidden" name="" value="" />
+                    <ul class="row form-group">
+                        <li class="col-sm-12">
+                            <label class="labelWrap">
+                                <span>User Type</span>
+                                <select name="userType" id="">
+                                <option value="Customer">Customer</option>
+                                <option value="Cooker">Cooker</option>
+                                <option value="DeliveryMan">Delivery Man</option>
+                                </select>
+                            </label>
+                        </li>
+                        <li class="col-sm-6">
+                            <label class="labelWrap">
+                                <span>Name</span>
+                                <input type="text" name="name" id="name" placeholder="Write your name here...">
+                            </label>
+                        </li>
+                        <li class="col-sm-6">
+                            <label class="labelWrap">
+                                <span>Email Id</span>
+                                <input type="text" name="email" id="email" placeholder="Write your email here...">
+                            </label>
+                        </li>
+                        <li class="col-sm-12">
+                            <label class="labelWrap">
+                                <span>Phone No</span>
+                                <input type="text" name="phone" id="phone" placeholder="Write your phone number...">
+                            </label>
+                        </li>
+                        <li class="col-sm-12">
+                            <label class="labelWrap">
+                                <span>Message</span>
+                                <textarea class="row3" name="message" id="message" placeholder="Type here..."></textarea>
+                            </label>
+                        </li>
+                        <li class="col-sm-12">
+                            <label class="labelWrap">
+                                <div class="btn_wr">
+                                    <button type="submit" class="btn btn-sm" id="submitcontact">Submit Now</button>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<app-footer></app-footer>

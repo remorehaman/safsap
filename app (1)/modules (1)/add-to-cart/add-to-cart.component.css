@@ -1,0 +1,30 @@
+.add_to_cart figure img{
+    width: 100px;
+}
+
+.add_to_cart .table-bordered td a:last-child{
+  color: #fff;
+}
+
+.add_to_cart .table-bordered td{
+  text-align: center;
+}
+.add_to_cart .table-bordered thead th {
+  text-align: center;
+}
+.add_to_cart .table-bordered input{
+  width: 25%;
+  padding: 0;
+  text-align: center;
+}
+.add_to_cart .table-bordered td input.plus,.add_to_cart .table-bordered td input.minus{
+    width: 20px;
+    padding: 0 0px 0 0;
+    height: 20px;
+    line-height: 20px;
+    min-width: 0;
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #d3d3d3;
+    color: #000;
+}

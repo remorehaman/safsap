@@ -1,0 +1,227 @@
+<app-header 
+    [header-slider]="false" 
+    [header-img]="true"
+    [header-img-data]="headerImage"
+    [header-cookers-info]="userInfo"
+    >
+</app-header>
+
+<section class="cooker_details section bg2 ">
+    <div class="container">
+        <div class="row">
+            <div class="dtls-review-left col-sm-6">
+                <h2 class="heading">About {{cookersDetails?.name}}</h2>
+                <p [innerHTML] = "cookersDetails?.hotel_description | uppercase"></p>
+            </div>
+            <div class="dtls-review-right col-sm-6">
+                <h2 class="heading">Reviews</h2>
+                <div class="testimonial_list mCustomScrollbar">
+
+                    <ul class="ul row " id="reviewslist">
+                    
+                    </ul>
+                    <div id="loadreview" class="spinner-border text-danger" style="margin-top:5px;" role="status">
+                        <!-- <span>Loading...</span> -->
+                        <span>Under Construction...</span>
+                    </div>
+                    <div id="nomatchreview" style="display:none">No review[s] found.</div>
+                    <div id="loadmoreReview" class="header_btn btn" style="display:none;margin-top:5px;">Load More</div>
+
+                </div>
+            </div>
+        </div> 
+    </div>
+</section>
+
+
+
+<section class="section cooker_individual_dish">
+
+    <div class="container">
+
+        <h2 class="text-center heading red" id="availabledishesbycooker">Available dishes by {{cookersDetails?.name}}</h2> 
+       <div class="row">
+           <div class="col-sm-3" *ngFor = "let sinle_cooker_dishes of cookerDishList">
+                <app-individual-cooker-dishes [cookers-thumbnailInfo]="sinle_cooker_dishes"></app-individual-cooker-dishes>   
+           </div>
+       </div>
+            
+        
+       
+                  
+
+        <!-- <ul class="ul row" id="dishul">
+
+        </ul> 
+
+        <div id="loadcookerdish" class="spinner-border text-danger" style="margin-top:5px;" role="status">
+
+            <span>Loading...</span>
+
+        </div> -->
+
+        <!-- <div id="nomatch" style="display:none">No match found.</div>
+
+        <div id="loadmore" class="header_btn btn" style="display:none;margin-top:5px;">Load More</div> -->
+
+        <!-- <div id="dishskeleton" style="display:none">
+
+            <li class="col-md-3 col-sm-4">
+
+                <div class="sk_box">
+
+                    <a href="#">
+
+                        <figure>
+
+                            <img src="#" alt="product">
+
+                        </figure>
+
+                        <div class="sk_text">
+
+                            <h2 class="subheading">[DISHNAME]</h2>
+
+                            <div class="para">[DISHDESCRIPTION]</div>
+
+                            <div class="bottom-sec d-flex justify-content-center align-items-center flex-wrap">
+
+                                <div class="name">[DISHSELLER]</div>
+
+                                <div class="rating"><i class="fa fa-star"></i> [AVGRATING]</div>
+
+                                <div class="price">[DISHPRICE]</div>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </li>
+
+        </div> -->
+        <!-- <div id="reviewskeleton" style="display:none">
+                <li class="col-sm-12">
+                    <div class="sk_box">
+                        <div class="sk_text">
+                            <div class="sk_para">[REVIEWTEXT]</div>
+                            <div class="d-flex align-items-center">
+                            <h2 class="subheading">[REVIEWNAME]<span>[REVIEWDATE]</span></h2><div class="rating">[REVIEWRATING]</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </li>
+            </div> -->
+
+        
+    </div>
+
+</section>
+
+
+
+
+<app-footer></app-footer>
+
+
+
+<!-- ----------- -->
+
+<!-- <main class="mainContainer">  
+
+    
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="text-center heading red" id="availabledishesbycooker">Available dishes by <?php echo $cooker_details->name;?></h2> 
+
+            <div class="product_list">
+
+                <ul class="ul row" id="dishul">
+
+                </ul> 
+
+                <div id="loadcookerdish" class="spinner-border text-danger" style="margin-top:5px;" role="status">
+
+                    <span>Loading...</span>
+
+                </div>
+
+                <div id="nomatch" style="display:none">No match found.</div>
+
+                <div id="loadmore" class="header_btn btn" style="display:none;margin-top:5px;">Load More</div>
+
+                
+
+                <div id="dishskeleton" style="display:none">
+
+                    <li class="col-md-3 col-sm-4">
+
+                        <div class="sk_box">
+
+                            <a href="../cookerdish/<?php echo $cooker_details->hotel_slug;?>/[DISHSLUG]">
+
+                                <figure>
+
+                                    <img [DISHIMAGE] alt="product">
+
+                                </figure>
+
+                                <div class="sk_text">
+
+                                    <h2 class="subheading">[DISHNAME]</h2>
+
+                                    <div class="para">[DISHDESCRIPTION]</div>
+
+                                    <div class="bottom-sec d-flex justify-content-center align-items-center flex-wrap">
+
+                                        <div class="name">[DISHSELLER]</div>
+
+                                        <div class="rating"><i class="fa fa-star"></i> [AVGRATING]</div>
+
+                                        <div class="price">[DISHPRICE]</div>
+
+                                    </div>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+                </div>
+                <div id="reviewskeleton" style="display:none">
+                    <li class="col-sm-12">
+                        <div class="sk_box">
+                            <div class="sk_text">
+                                <div class="sk_para">[REVIEWTEXT]</div>
+                                <div class="d-flex align-items-center">
+                                <h2 class="subheading">[REVIEWNAME]<span>[REVIEWDATE]</span></h2><div class="rating">[REVIEWRATING]</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </li>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <input type="hidden" id="sitepath" value="../">
+
+    <input type="hidden" id="cookerid" value="<?php echo $cooker_details->userId;?>">
+
+</main>  -->

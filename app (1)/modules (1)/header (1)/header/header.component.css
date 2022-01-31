@@ -1,0 +1,41 @@
+.nav_menu ul li a.active{
+    color: #df3736;
+}
+.cart_btn
+{
+    padding: 0 0 0;
+    color: #df3736;
+    font-size: 30px;
+    margin: 0 0 0 0;
+    float: right;
+    width: auto;
+    text-align: center;
+    text-indent: 5px;
+    position: relative;
+    top: 0px;
+}
+.cart_btn a span
+{ 
+    position: absolute;
+    top: -12px;
+    font-size: 20px;
+    background: #ffffff78;
+    box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+    font-weight: 700;
+    text-indent: 0;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    left: 55px;
+}
+.cart_btn a p{
+    font-size: 16px;
+}
+/* .mainHeader .header_main .nav_wrapper{
+    margin-left:60px !important
+}
+.nav_menu > ul > li {
+    margin: 0 4px 0 0;
+} */

@@ -1,0 +1,32 @@
+<section class="section">
+    <div class="container">
+        <h2 class="text-center heading mb5">Cookers Nearby Your Locations</h2>
+        <div class="short-desc">Donec sit amet venenatis lacus, eget accumsan diam</div>
+        <div class="product_list">
+            <ul class="ul row">
+                <li class="col-md-3 col-sm-4"  *ngFor = "let cooker of getcookernearby">
+                    <div class="sk_box">
+                        <a [routerLink]="['/cookers-details',cooker.hotel_slug]">
+                            <figure>
+                                <img src="https://eclickprojects.com/safsap/uploads/profile_pictures/{{cooker.user_profile_pic_resized}}" alt="product">
+                            </figure>
+                            <div class="sk_text">
+                                <h2 class="subheading">{{cooker.name}}</h2>
+                                <div class="para">{{cooker.hotel_address}}</div>
+                                <div class="bottom-sec d-flex justify-content-center align-items-center flex-wrap">
+                                    <div class="name">{{cooker.name}}</div>
+                                    <div class="rating"><i class="fa fa-star"></i>{{cooker.avgrating.avgrating}}</div>
+                                    <div class="price">$16.20</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                
+            </ul>
+            <div class="btn_center">
+                <a [routerLink]="'/foodcategory'"class="btn">View All</a>
+            </div>
+        </div>
+    </div>
+</section>
